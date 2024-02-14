@@ -159,28 +159,3 @@ function neverCheker(name: string | number) {
    }
 }
 
-// Call Signiture
-
-// 함수생성
-// function add(a: number,b: number){
-//    return a+b
-// }
-// 같은 함수를 arrow 함수로 표현
-//const add =(a:number,b:number)=> a+b
-
-// call signiture 란 함수에 커서를 올렸을 때 보게 된는 것
-// 이는 함수를 어떻게 부르고 return타입을 무얼 할건지 보여줌
-// 즉 add 에 커서를 올리면 다음과 같이 나오는 걸 
-// type으로 바꿔줌
-
-// type을 만들어 함수를 구현하기 전에 함수가 어떻게 작동하는지 서술해 둘 수 있는 방법
-// 타입을 먼저 생각하게 하기 때문에 좋음
-// 프로그램을 디자인하면서 타입을 먼저 생각한 후 코드를 구현
-// 이것을 call signiture 라고 부른다
-type Add =(a:number,b:number)=> number
-
-//add 의 타입은 Add 라고 활용 가능
-const add : Add = (a,b) => a + b
-
-// polymorphism 다형성 , generic
-// overloading 오버로딩
