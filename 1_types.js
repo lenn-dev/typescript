@@ -116,7 +116,7 @@ function hello2() {
 // 각각 string, number, never이다.
 // | and & are only for types.
 // || and && are for `if/else` and the like on JS.
-function neverChcker(name) {
+function neverCheker(name) {
     if (typeof name === 'string') {
         name;
     }
@@ -127,4 +127,3 @@ function neverChcker(name) {
         name;
     }
 }
-// github push
