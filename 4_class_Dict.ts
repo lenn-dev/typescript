@@ -59,17 +59,20 @@ class Dict {
         return this.words[term]
     }
 
-    // 더 많은 메서드를 만들기
-    // 단어 삭제
-    // 단어 업데이트
+    //js에도 있는 static 메소드 
+    static hello(){
+        return "hello";
+    } 
 
 }
 
 // Word 클래스 만들기, 각각의 단어 만들기
 class Word {
     constructor(
-        public term:string,
-        public def:string
+        // 사전에 접근해서 보여주고는 싶지만, 외부에서 수정하길 바라지 않을 경우
+        // readonly 사용
+        public readonly term:string,
+        public readonly def:string
     ){}
 
     // 더 많은 메소드 만들기
@@ -85,3 +88,6 @@ const dict = new Dict();
 
 console.log(dict.add(kimchi));
 console.log(dict.def("kimchi"));
+
+//kimchi1.def = "xxx"; // readonly 라서 접근해서 수정 불가능
+Dict1.hello();
