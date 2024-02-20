@@ -34,7 +34,7 @@ type Words = {
 // 2. constructor에서 수동으로 초기화(initialize)해줌
 class Dict {
 
-    // words 가 private이므로, dictionary 안에서만 words 보기를 원함
+    // dictionary 안에서만 words 보기를 원하므로 private
     private words: Words
     
     constructor(){
