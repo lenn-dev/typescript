@@ -1,8 +1,9 @@
-//======= 실전연습 Hash Map 만들기 ==========
-//========================================
+// 4_class_ass.ts 파일이 변수가 직관적이라 더 이해하기 쉬움. 똑같은 내용 
+// 혹은 4_class_ass_answer.ts 참고
 
+//======= 실전연습 Hash Map 만들기 =========
 // 해싱 알고리즘을 쓰는 완벽한 해시맵
-// 단어사전
+// 단어 사전 만들기
 // Dict 클래스가 words 오브젝트를 가짐
 // 사전에 새 단어 추가하고, 단어 찾고, 단어 삭제하는 메소드 만들예정
 
@@ -90,4 +91,4 @@ console.log(dict.add(kimchi));
 console.log(dict.def("kimchi"));
 
 //kimchi1.def = "xxx"; // readonly 라서 접근해서 수정 불가능
-Dict1.hello();
+Dict.hello();

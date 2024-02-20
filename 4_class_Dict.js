@@ -1,5 +1,5 @@
-//======= 실전연습 Hash Map 만들기 ==========
-//========================================
+// 4_class_ass.ts 파일이 변수가 직관적이라 더 이해하기 쉬움. 똑같은 내용 
+// 혹은 4_class_ass_answer.ts 참고
 // ts코드
 // class Dict{
 //     constructor(
@@ -39,11 +39,18 @@ var Dict = /** @class */ (function () {
     Dict.prototype.def = function (term) {
         return this.words[term];
     };
+    //js에도 있는 static 메소드 
+    Dict.hello = function () {
+        return "hello";
+    };
     return Dict;
 }());
 // Word 클래스 만들기, 각각의 단어 만들기
 var Word = /** @class */ (function () {
-    function Word(term, def) {
+    function Word(
+    // 사전에 접근해서 보여주고는 싶지만, 외부에서 수정하길 바라지 않을 경우
+    // readonly 사용
+    term, def) {
         this.term = term;
         this.def = def;
     }
@@ -55,3 +62,5 @@ var kimchi = new Word("kimchi", "한국의 대표적 발효음식");
 var dict = new Dict();
 console.log(dict.add(kimchi));
 console.log(dict.def("kimchi"));
+//kimchi1.def = "xxx"; // readonly 라서 접근해서 수정 불가능
+Dict.hello();

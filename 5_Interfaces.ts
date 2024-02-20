@@ -9,8 +9,8 @@ type Health = 1|5|10
 // TS에서 추상클래스를 쓰면 JS에서 일반클래스로 바뀌는데 파일크기가 커지고 추가클래스가 만들어진다는 뜻
 // 추상클래스를 다른 클래스가 상속받기 원하는 형태가 있어서 쓰는 거라면
 // 인터페이스를 쓰는 것이 더 좋다.
-// abstract class => interface
-// extends => implements
+// abstract class 를 interface 로
+// extends 를 implements 로
 
 // reactjs 할때 많이 사용한다.
 // type 과 interface 둘다 오브젝트 모양을 알려줄 수 있지만

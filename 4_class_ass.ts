@@ -14,18 +14,25 @@
 // bulkDelete: 다음과 같은 방식으로. 여러개의 단어를 한번에 삭제할 수 있게 해줌. ["김치", "아파트"]
 //==================================================================
 
-// 빈 객체타입 정의
-type Words_ = {
+// 사전이 될 빈 객체타입 정의
+type Dictionary = {
     [key:string] : string
 }
-class Dict_ {
-    // 사전이 될 빈 객체 생성
-    private dictionary : Words_
+// 사전에 입력받을 단어의 타입 정리
+class Wordtype {
+    constructor(
+        public term:string,
+        public def:string
+    ){}
+}
+class Dict2 {
+    // 사전이 될 빈 객체 생성 : Dictionary 타입
+    private dictionary : Dictionary
     constructor(){
         this.dictionary = {}
     }
     // 단어 추가
-    add(word:Word_){
+    add(word:Wordtype){
         // 사전에 단어가 존재하는지 확인 
         if(this.dictionary[word.term]===undefined){
             //객체 리터럴로 사전에 새로운 단어 등록
@@ -45,7 +52,7 @@ class Dict_ {
     // 단어 업데이트
     update(term:string,def:string){
         if(this.dictionary[term]){
-            this.dictionary[term] = def
+           this.dictionary[term] = def
         }
     }
     // 사전의 모든 단어 보여주기
@@ -58,7 +65,7 @@ class Dict_ {
         return num.length;
     }
     // 단어 업데이트 + 없을 경우 insert (add + update)
-    upsert(word:Word_){
+    upsert(word:Wordtype){
         if(this.dictionary[word.term]===undefined){
             //객체 리터럴로 사전에 새로운 단어 등록
             this.dictionary[word.term] = word.def
@@ -73,8 +80,8 @@ class Dict_ {
     }
     // 여러개 단어 한꺼번에 
     //[{term:"김치", definition:"대박이네~"}, {term:"아파트", definition:"비싸네~"}]
-    bulkAdd(bulk:Word_[]){
-        bulk.forEach((word: Word_) => {
+    bulkAdd(bulk:Wordtype[]){
+        bulk.forEach((word: Wordtype) => {
             if (this.dictionary[word.term] === undefined)
             this.dictionary[word.term] = word.def
         })
@@ -89,45 +96,35 @@ class Dict_ {
     }
 }
 
-// 사전에 입력받을 단어의 타입 정리
-class Word_ {
-    constructor(
-        public term:string,
-        public def:string
-    ){}
 
-    // 더 많은 메소드 만들기
-    // 여기선 단어의 정의 추가, 수정
-    // 단어 출력
-}
 
 // 새 변수 kimchi 는 2개의 인자를 받고 첫번째는 term, 두번째는 definition
-const kimchi_ = new Word_("kimchi","한국의 대표음식");
-const chocolate = new Word_("chocolate","카카오 콩을 재료로 가공한 식품");
-const ai= new Word_("ai"," 인간의 학습능력, 추론능력, 지각능력을 인공적으로 구현하려는 컴퓨터 과학")
-const stone = new Word_("stone","암석에서 떨어져 나온 바위의 조각으로 모래보다 큰 것.")
+const kimchi_ = new Wordtype("kimchi","한국의 대표음식");
+const chocolate = new Wordtype("chocolate","카카오 콩을 재료로 가공한 식품");
+const ai= new Wordtype("ai"," 인간의 학습능력, 추론능력, 지각능력을 인공적으로 구현하려는 컴퓨터 과학")
+const stone = new Wordtype("stone","암석에서 떨어져 나온 바위의 조각으로 모래보다 큰 것.")
 
 // Dict 클라스 인스턴트, Dict 의 모든 요소, 메서드를 상속받음
-const dict_ = new Dict_();
+const foodDict = new Dict2();
 
-console.log(dict_.add(kimchi_));
-console.log(dict_.add(chocolate));
-console.log(dict_.add(ai));
+console.log(foodDict.add(kimchi_));
+console.log(foodDict.add(chocolate));
+console.log(foodDict.add(ai));
 
-console.log(dict_.get("kimchi"));
-console.log(dict_.update("kimchi","여러 채소를 소금,양념으로 발효시킨 식품이다."))
-console.log(dict_.get("kimchi"));
+console.log(foodDict.get("kimchi"));
+console.log(foodDict.update("kimchi","여러 채소를 소금,양념으로 발효시킨 식품이다."))
+console.log(foodDict.get("kimchi"));
 
-console.log(dict_.showAll());
-console.log(dict_.count());
-console.log(dict_.upsert(ai));
-console.log(dict_.upsert(stone));
+console.log(foodDict.showAll());
+console.log(foodDict.count());
+console.log(foodDict.upsert(ai));
+console.log(foodDict.upsert(stone));
 
-console.log (dict_.exists("ai"));
-console.log(dict_.delete("kimchi"));
-console.log(dict_.showAll());
+console.log (foodDict.exists("ai"));
+console.log(foodDict.delete("kimchi"));
+console.log(foodDict.showAll());
 
-console.log(dict_.bulkAdd([{term:"김치", def:"대박이네~"}, {term:"아파트", def:"비싸네~"}]));
-console.log(dict_.showAll());
-console.log(dict_.bulkDelete(["김치","아파트"]));
-console.log(dict_.showAll());
+console.log(foodDict.bulkAdd([{term:"김치", def:"대박이네~"}, {term:"아파트", def:"비싸네~"}]));
+console.log(foodDict.showAll());
+console.log(foodDict.bulkDelete(["김치","아파트"]));
+console.log(foodDict.showAll());
