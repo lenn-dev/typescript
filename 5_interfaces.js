@@ -6,19 +6,18 @@ type Health = 1|5|10
 // interface 는 오브젝트의 모양을 특정해주기 위함
 // 추상 클래스와 비슷한 보호를 제공하지만,인터페이스는 자바스크립트 파일에서 보이지 않음.
 // TS에서 추상클래스를 쓰면 JS에서 일반클래스로 바뀌는데 파일크기가 커지고 추가클래스가 만들어진다는 뜻
-// 추상클래스를 다른 클래스가 상속받기 원하는 형태가 있어서 쓰는 거라면
+// 다른 클래스가 추상클래스를 상속받기 원하는 형태가 있어서 쓰는 거라면
 // 인터페이스를 쓰는 것이 더 좋다.
-// abstract class => interface
-// extends => implements
+// abstract class 를 interface 로 바꾸고 = 빼주면 됨
+// 상속받을 때는 extends 를 implements 로 바꿔줌
 
 // reactjs 할때 많이 사용한다.
-// type 과 interface 둘다 오브젝트 모양을 알려줄 수 있지만
-// interface는 오직 오브젝트 모양만을 알려주는데만 쓸 수 있어서 활용도는 낮다.
+// type 과 interface 둘다 오브젝트 형태를 알려줄 수 있지만
+// interface는 오직 '오브젝트' 형태만을 알려주는데만 쓸 수 있어서 활용도는 낮다.
 // 예를 들어 type엔 3가지가 있지만 interface는 3번만 가능
 // 1. (type alias) type nickname =string; 은 안됨
 // 2. (type specification) type team = "red"|"blue"|"yello"
 // 3. (type for object)
-
 interface _Player {
     nickname:string,
     healthBar:Health
@@ -55,7 +54,7 @@ var Player4 = /** @class */ (function () {
 // 인터페이스를 만들어두고 팀원이 원하는 각자의 방식으로 클래스를 상속하도록 할 수 있다.
 // 모두가 같은 인터페이스를 사용한다면 같은 property와 method를 가지게 될 것임
 // 인터페이스를 리턴할 수도 있음
-// 다만 인터페이스를 쓸때는 new User4 쓸 필요 없이 
+// 다만 인터페이스를 쓸 때는 new User4 쓸 필요 없이 
 // User4 안의 내용 그대로만 return 해주면 됨
 function makeUser(user) {
     return {

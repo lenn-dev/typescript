@@ -7,19 +7,18 @@ type Health = 1|5|10
 // interface 는 오브젝트의 모양을 특정해주기 위함
 // 추상 클래스와 비슷한 보호를 제공하지만,인터페이스는 자바스크립트 파일에서 보이지 않음.
 // TS에서 추상클래스를 쓰면 JS에서 일반클래스로 바뀌는데 파일크기가 커지고 추가클래스가 만들어진다는 뜻
-// 추상클래스를 다른 클래스가 상속받기 원하는 형태가 있어서 쓰는 거라면
+// 다른 클래스가 추상클래스를 상속받기 원하는 형태가 있어서 쓰는 거라면
 // 인터페이스를 쓰는 것이 더 좋다.
-// abstract class 를 interface 로
-// extends 를 implements 로
+// abstract class 를 interface 로 바꾸고 = 빼주면 됨
+// 상속받을 때는 extends 를 implements 로 바꿔줌
 
 // reactjs 할때 많이 사용한다.
-// type 과 interface 둘다 오브젝트 모양을 알려줄 수 있지만
-// interface는 오직 오브젝트 모양만을 알려주는데만 쓸 수 있어서 활용도는 낮다.
+// type 과 interface 둘다 오브젝트 형태를 알려줄 수 있지만
+// interface는 오직 '오브젝트' 형태만을 알려주는데만 쓸 수 있어서 활용도는 낮다.
 // 예를 들어 type엔 3가지가 있지만 interface는 3번만 가능
 // 1. (type alias) type nickname =string; 은 안됨
 // 2. (type specification) type team = "red"|"blue"|"yello"
 // 3. (type for object)
-
 interface _Player {
     nickname:string,
     healthBar:Health
@@ -49,9 +48,11 @@ lenny.name ="lalala" */
 
 // 인터페이스의 또다른 특징
 // 객체지향 프로그래밍을 기반으로 디자인되어 좀 더 개방적임
-// property 들을 축적시킬 수 있음- 좀 더 나은 합체능력
+// property 들을 축적시킬 수 있음 - 좀 더 나은 합체능력
 // TS 가 반복된 interface를 하나로 합쳐줌
 // type은 이렇게 쓸 수 없음
+// User3 라는 이름의 interface가 반복적으로 쓰여도 TS가 합해줌
+// 따라서 이미 만들어져 있는 interface에 중첩하여 쓰기도 함
 /* interface User3 {
     name:string
 }
@@ -70,7 +71,7 @@ const lennys : User3 = {
 
 // 추상화를 원할 때 클래스와 인터페이스를 사용할 때의 차이점
 // abstract class 사용할 때 문제점은 js 에 abstract class 개념이 없어서
-// 그냥 class 로 컴파일 된다는 것이다.
+// 그냥 class 로 컴파일 된다는 것이다.코드 많아짐
 /* abstract class User4 {
     constructor(
         protected firstName:string,
@@ -130,7 +131,7 @@ class Player4 implements User4, Human{
 // 모두가 같은 인터페이스를 사용한다면 같은 property와 method를 가지게 될 것임
 
 // 인터페이스를 리턴할 수도 있음
-// 다만 인터페이스를 쓸때는 new User4 쓸 필요 없이 
+// 다만 인터페이스를 쓸 때는 new User4 쓸 필요 없이 
 // User4 안의 내용 그대로만 return 해주면 됨
 function makeUser(user:User4):User4{
     return {
