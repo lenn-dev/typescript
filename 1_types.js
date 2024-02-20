@@ -7,7 +7,7 @@ var c = true;
 var d = [1, 2];
 var e = ['1', '2'];
 var f = [true];
-// don't need to write the type all the time, it's better to let TS infer the type sometimes
+// 늘 타입을 적을 필요는 없다, TS로 하여금 추론하게 하는 것이 좋음
 var g = [1, 2];
 // === optional 타입 ===
 // player 란 객체가 있다.
