@@ -11,7 +11,7 @@ let d: number[] = [1, 2];
 let e: string[] = ['1', '2'];
 let f: boolean[] = [true];
 
-// don't need to write the type all the time, it's better to let TS infer the type sometimes
+// 늘 타입을 적을 필요는 없다, TS로 하여금 추론하게 하는 것이 좋음
 let g = [1, 2];
 
 
