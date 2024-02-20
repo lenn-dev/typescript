@@ -1,4 +1,4 @@
-// class란
+// class
 // object orientied programming in TS
 // c# 과 java 에서의 개념들과 비슷함
 // e.g) protected method, public property,abstract class, polymorphism, generic
