@@ -1,3 +1,4 @@
+// alt+shift+A 전체주석처리
 //classes 그리고 interfaces 를 활용하여, 아래 API를 위한 '미니' 버전을 구현하세요.
 // 1. LocalStorage API
 // 2. Geolocation API
@@ -58,7 +59,7 @@ console.log(myBooleanStorage.getItem("married")); // Output: true
 // GeoLocation에 사용될 필드와 메소드에 적용될 수 있는 타입들을 정의해보세요.
 // overloading을 적용될 수 있도록 GeoLocation API에 있는 기존 메소드의 이름을 쓰되 새로 만든 타입을 중복 시켜 적용해보세요.
 // 사용법에 있는 getCurrentPosition(), watchPosition() 안에 Fn이 붙어 있는 파라미터들은 콜백 함수를 의미하며 나머지들은 전부 객체를 가리킵니다. 이에 유의하여 타입을 설정해보시기 바랍니다.
-interface Geo {
+/* interface Geo {
     (successFn:boolean,errorFn?:boolean,optionsObj?:boolean):number
     (success:boolean, error?:boolean, options?:boolean):number
     (id:number):number
@@ -74,7 +75,7 @@ class GeoLocation {
     clearWatch(id){
 
     }
-}
+} */
 
 // geolocation.getCurrentPosition(successFn);
 // geolocation.getCurrentPosition(successFn, errorFn);
