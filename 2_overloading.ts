@@ -9,11 +9,11 @@
 
 // 함수선언
 // function add(a: number,b: number){return a+b}
-// arrow 함수로 바꿈
+// => arrow 함수로 바꿈
 // const add = (a:number,b:number) => a+b
-// 이 함수의 타입형식 (함수의 인수 및 반환 값의 유형)
+// => 이 함수의 타입형식 (함수의 인수 및 반환 값의 유형)
 // const add = (a:number,b:number) => number
-// 이를 type으로 바꿔주고 여러번 재사용 가능함 (타입 이름은 대문자로 시작)
+// => 이를 type으로 바꿔주고 여러번 재사용 가능함 (타입 이름은 대문자로 시작)
  type Add =(a:number,b:number)=> number
 // 이것이 call signiture
 // 함수 구현하기 전에 타입을 먼저 디자인할 수 있다.
