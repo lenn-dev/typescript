@@ -121,6 +121,7 @@ const duck: ducktype = {
       favFood: 'rice',
    }
 };
+//Animal 타입을 직접사용
 const panda: Animal<null> = {
    name: 'panda',
    extraInfo: null

@@ -19,6 +19,7 @@ var duck = {
         favFood: 'rice',
     }
 };
+//Animal 타입을 직접사용
 var panda = {
     name: 'panda',
     extraInfo: null
