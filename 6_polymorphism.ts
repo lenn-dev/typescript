@@ -9,7 +9,7 @@
 // 나만의 인터페이스를 만들 것임. 
 interface SStorage<T> {
     // 무제한의 key를 받고, 타입을 알때
-    [key:string]: T
+    //[key:string]: T
 }
 
 // LocalStorage 에 각각의 타입만을 위한 스토리지를 만들고 싶다.

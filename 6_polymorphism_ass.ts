@@ -20,7 +20,7 @@
 interface Storage1<T> {
     [key:string]: T
 }
-class LocalStorage1<T> {
+abstract class LocalStorage1<T> {
     private storage:Storage1<T> ={}
 
     setItem(key:string,value:T){
@@ -36,13 +36,14 @@ class LocalStorage1<T> {
         this.storage = {}
     }
 }
-const myStringStorage = new LocalStorage1<string>()
-myStringStorage.setItem("haha", "hello");
-console.log(myStringStorage.getItem("haha"));// Output: hello
+//class 를 abstract으로 바꾸면서 인스턴스를 못만들게 되서 아래코드는 바꿔야함
+//const myStringStorage = new LocalStorage1<string>()
+//myStringStorage.setItem("haha", "hello");
+//console.log(myStringStorage.getItem("haha"));// Output: hello
 
-const myBooleanStorage = new LocalStorage1<boolean>()
-myBooleanStorage.setItem("married", true);
-console.log(myBooleanStorage.getItem("married")); // Output: true
+//const myBooleanStorage = new LocalStorage1<boolean>()
+//myBooleanStorage.setItem("married", true);
+//console.log(myBooleanStorage.getItem("married")); // Output: true
 
 
 //localStorage.setItem(<key>,<value>)
@@ -59,23 +60,23 @@ console.log(myBooleanStorage.getItem("married")); // Output: true
 // GeoLocation에 사용될 필드와 메소드에 적용될 수 있는 타입들을 정의해보세요.
 // overloading을 적용될 수 있도록 GeoLocation API에 있는 기존 메소드의 이름을 쓰되 새로 만든 타입을 중복 시켜 적용해보세요.
 // 사용법에 있는 getCurrentPosition(), watchPosition() 안에 Fn이 붙어 있는 파라미터들은 콜백 함수를 의미하며 나머지들은 전부 객체를 가리킵니다. 이에 유의하여 타입을 설정해보시기 바랍니다.
-/* interface Geo {
-    (successFn:boolean,errorFn?:boolean,optionsObj?:boolean):number
-    (success:boolean, error?:boolean, options?:boolean):number
-    (id:number):number
-}
-class GeoLocation {
-    private geo:Geo = {}
-    getCurrentPosition(successFn,errorFn?,optionsObj?){
-        if
-    }
-    watchPosition(success, error?, options?){
 
-    }
-    clearWatch(id){
+// type successFn = ()=>void
+// type errorFn =  ()=>void
+// type optionsObj = ()=>void
 
-    }
-} */
+// class GeoLocation {
+    
+//     getCurrentPosition(successFn:successFn,errorFn?:errorFn,optionsObj?:optionsObj){
+        
+//     }
+//     watchPosition(successFn:successFn, errorFn?:errorFn, optionsObj?:optionsObj){
+
+//     }
+//     clearWatch(id:number){
+
+//     }
+// }
 
 // geolocation.getCurrentPosition(successFn);
 // geolocation.getCurrentPosition(successFn, errorFn);
