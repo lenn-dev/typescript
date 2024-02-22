@@ -17,7 +17,7 @@ interface SStorage<T> {
 // 타입스크립트에세 T라고 불리는 제네릭을 받을 계획이라고 알려줄 것임
 // 클래스네임에 들어온 제네릭을 인터페이스로 보내줄 것임
 // 그리고 그 인터페이스는 제네릭을 이용함
-class LocalStorage<T>{
+class LocalStorage2<T>{
     private storage : SStorage<T> ={}
     set(key:string,value:T){
         this.storage[key] = value;
@@ -33,10 +33,10 @@ class LocalStorage<T>{
     }
 }
 
-const stringStorage = new LocalStorage<string>()
+const stringStorage = new LocalStorage2<string>()
 stringStorage.get("key")
 stringStorage.set("hello","how are you")
 
-const booleanStorage = new LocalStorage<boolean>()
+const booleanStorage = new LocalStorage2<boolean>()
 booleanStorage.get("xxx")
 booleanStorage.set("key",true)
